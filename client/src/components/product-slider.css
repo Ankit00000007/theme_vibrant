@@ -1,0 +1,20 @@
+.my-padding img{
+    border-radius: 15px;
+    width: 100%;
+}
+
+.my-margin{
+    margin: 0;
+}
+
+
+@media(max-width:768px) {
+    .my-padding {
+        padding: 0 !important;
+    }
+
+    .my-margin{
+        margin-top: 8rem;
+    }
+}
+

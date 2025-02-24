@@ -1,0 +1,153 @@
+{
+    "wallets": [
+        {
+            "wallet_status": 1,
+            "value": 0,
+            "updated_on": null,
+            "_id": "67a5f9482b9ee67c62b678e3",
+            "id": 2,
+            "name": "Sponsor income",
+            "wallet_type": "income",
+            "slug": "direct_income",
+            "count_in": "main_wallet",
+            "orderIndex": 0
+        },
+        {
+            "wallet_status": 1,
+            "value": 0,
+            "updated_on": null,
+            "_id": "67a5f9482b9ee67c62b678e4",
+            "id": 3,
+            "name": "Reward Income",
+            "wallet_type": "income",
+            "slug": "reward_income",
+            "count_in": "main_wallet",
+            "orderIndex": 4
+        },
+        {
+            "wallet_status": 1,
+            "value": 10,
+            "updated_on": null,
+            "_id": "67a5f9482b9ee67c62b678e1",
+            "id": 0,
+            "name": "Main Wallet",
+            "wallet_type": "wallet",
+            "slug": "main_wallet",
+            "count_in": null,
+            "orderIndex": 5
+        },
+        {
+            "wallet_status": 1,
+            "value": 0,
+            "updated_on": null,
+            "_id": "67a5f9482b9ee67c62b678e2",
+            "id": 1,
+            "name": "Fund Wallet",
+            "wallet_type": "wallet",
+            "slug": "fund_wallet",
+            "count_in": null,
+            "orderIndex": 5
+        },
+        {
+            "wallet_status": 1,
+            "value": 0,
+            "updated_on": null,
+            "_id": "67a5f9482b9ee67c62b678e5",
+            "id": 4,
+            "name": "Self Investment",
+            "wallet_type": "investment",
+            "slug": "self_investment",
+            "count_in": null,
+            "orderIndex": 5
+        },
+        {
+            "wallet_status": 1,
+            "value": 0,
+            "updated_on": null,
+            "_id": "67a5f9482b9ee67c62b678e6",
+            "id": 5,
+            "name": "Total Withdrawal",
+            "wallet_type": "withdrawal",
+            "slug": "total_withdrawal",
+            "count_in": null,
+            "orderIndex": 5
+        },
+        {
+            "wallet_status": 1,
+            "value": 0,
+            "updated_on": null,
+            "_id": "67a5f9482b9ee67c62b678e7",
+            "id": 6,
+            "name": "Total Payout",
+            "wallet_type": "payout",
+            "slug": "total_payout",
+            "count_in": null,
+            "orderIndex": 5
+        },
+        {
+            "wallet_status": 1,
+            "value": 0,
+            "updated_on": null,
+            "_id": "67a5f9482b9ee67c62b678e8",
+            "id": 7,
+            "name": "Repurchase BV Matching Income",
+            "wallet_type": "income",
+            "slug": "repurchase_matching_income",
+            "count_in": "main_wallet",
+            "orderIndex": 5
+        },
+        {
+            "wallet_status": 1,
+            "value": 0,
+            "updated_on": null,
+            "_id": "67a5f9482b9ee67c62b678e9",
+            "id": 8,
+            "name": "Mentor Club Income",
+            "wallet_type": "income",
+            "slug": "mentor_club_income",
+            "count_in": "main_wallet",
+            "orderIndex": 5
+        },
+        {
+            "wallet_status": 1,
+            "value": 0,
+            "updated_on": null,
+            "_id": "67a5f9482b9ee67c62b678ea",
+            "id": 9,
+            "name": "Super Mentor Club Income",
+            "wallet_type": "income",
+            "slug": "super_mentor_club_income",
+            "count_in": "main_wallet",
+            "orderIndex": 5
+        },
+        {
+            "wallet_status": 1,
+            "value": 0,
+            "updated_on": null,
+            "_id": "67a5f9482b9ee67c62b678eb",
+            "id": 10,
+            "name": "Gift Wallet",
+            "wallet_type": "wallet",
+            "slug": "gift_wallet",
+            "count_in": null,
+            "orderIndex": 5
+        },
+        {
+            "wallet_status": 1,
+            "value": 0,
+            "updated_on": null,
+            "_id": "67a5f9482b9ee67c62b678ec",
+            "id": 11,
+            "name": "Shopping Wallet",
+            "wallet_type": "wallet",
+            "slug": "shopping_wallet",
+            "count_in": null,
+            "orderIndex": 5
+        }
+    ],
+    "totalIncome": 0,
+    "working_income_required": 0,
+    "nonworking_income_required": 0,
+    "working_income": 0,
+    "nonworking_income": 0
+}

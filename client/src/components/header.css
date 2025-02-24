@@ -1,0 +1,36 @@
+.navlinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.navlinks li {
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+}
+
+.navlinks li:hover {
+  color: #047857;
+}
+
+@media (max-width: 1023px) {
+  .navlinks {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .navlinks li {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .navlinks li:last-child {
+    border-bottom: none;
+  }
+
+  .my-height{
+    height: 100vh;
+  }
+}
