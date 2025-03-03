@@ -16,7 +16,8 @@ export function Header() {
 
   const handleDashboardClick = () => {
     if (token) {
-      window.location.href = `https://d.vibrant-science.com/?token=${token}`;
+      // window.location.href = `https://d.vibrant-science.com/?token=${token}`;
+      window.location.href = `https://test.vibrant-science.com/?token=${token}`;
     }
   };
 

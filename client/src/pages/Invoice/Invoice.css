@@ -1,0 +1,767 @@
+.bondClose {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.downloadButton {
+  margin-bottom: 5px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: white;
+  background: var(--containerColor);
+  box-shadow: var(--myboxShadow);
+  padding: 0px 5px;
+  border-radius: 5px;
+}
+
+.invoice {
+  background-color: white;
+  padding: 10px;
+}
+
+.invoice-container {
+    border: 2px solid var(--colorPrimary);
+    padding: 10px;
+    /* background-color:var(--containerColor); */
+  }
+  
+  .invoice-table {
+    margin: 0px;
+    box-shadow: none;
+  }
+
+  .invoice-table thead th {
+    font-weight: 600;
+    font-size: 13px;
+    /* color: #3c1a2d; */
+    border: 1px solid #ccc;
+    background-color: var(--containerColor);
+    line-height: 18px;
+    text-align: center;
+    padding: 5px 2px;
+  }
+
+  .firstRow td ,.thirdRow td{
+    font-size: 12px;
+    font-weight: 500;
+    padding: 1px 2px;
+    text-align: center;
+    border: 1px solid #ccc;
+    color: black;
+    /* background: #fff8fd; */
+  }
+
+  .secondRow td{
+    font-weight: 600 ;
+    font-size: 13px ;
+    /* background: #e9cae0; */
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+    border: 1px solid #ccc;
+    color: black;
+  }
+
+  .secondRow p{
+    font-weight: 600 ;
+    font-size: 15px;
+  }
+
+  /* .invoice-table:hover td{
+    background: #fff8fd;
+  } */
+
+  .tableHeadDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tableHeadDiv p{
+    margin-bottom: 4px;
+    font-weight: 600;
+    font-size: 13px;
+  }
+
+  .tableDataDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tableDataDiv p {
+    margin-bottom: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    color: black;
+  }
+
+  .secondtableDataDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .secondtableDataDiv p {
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+  
+  footer {
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .headingDiv {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .logoImg {
+    width: 13%;
+  }
+
+  .branchDiv p {
+    text-align: left;
+    margin-bottom: 4px;
+    font-size:16px;
+    font-weight: 500;
+    /* color: #ebebeb; */
+  }
+
+  .branchDiv span {
+    font-weight: 700;
+    color: white;
+    color: var(--colorPrimary);
+  }
+
+  .investmentHead {
+    margin-bottom:26px;
+    font-weight: 600;
+  }
+
+  .investmentUser {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .InfoDiv {
+    /* gap: 330px; */
+    justify-content: space-between;
+    margin-bottom: 28px;
+  }
+
+  .InstDiv {
+    gap: 188px;
+    margin-bottom: 28px;
+  }
+
+  .invoiceDiv p{
+    text-align: right;
+    margin-bottom: 4px;
+    font-size:16px;
+    font-weight: 500;
+    /* color: #ebebeb; */
+  }
+
+  .invoiceDiv span {
+    font-weight: 700;
+    color:var(--colorPrimary);
+  }
+
+  .invoiceHeader {
+    padding: 35px 0px 35px 0px;
+    margin-bottom: 0px;
+    font-weight: 600;
+    font-size: 35px;
+  }
+
+  .userDiv h5 {
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .userDiv p {
+    text-align: left;
+    margin-bottom: 4px;
+    font-size:16px;
+    /* color:white; */
+    font-weight: 700;
+  }
+
+  .userDiv span {
+    font-weight: 500;
+    color: var(--colorPrimary);
+  }
+
+  .ReceiptDataDiv {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 28px;
+    margin-bottom: 28px;
+  }
+
+  .userDataDiv p,.DuplicateDataDiv p{
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    text-align: left;
+    /* color: #ebebeb; */
+  }
+
+  .SignedDiv p{
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    /* color: #ebebeb; */
+  }
+
+  .userDataDiv h5,.DuplicateDataDiv h5{
+    font-size: 17px;
+    font-weight: 700;
+    /* color:white; */
+    margin-bottom: 4px;
+    text-align: left;
+  }
+
+  .shippingData h5{
+    text-align: right !important;
+  }
+
+  .shippingData p{
+    text-align: right !important;
+    }
+
+    .rowInvoice {
+      width: 100%;
+      margin: 0px;
+    }
+
+  /* .DuplicateDate{
+    padding-top: 30px;
+  } */
+
+  .invoiceFooter {
+    margin: 28px 0px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+.invoiceFooter p{
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.SignatureDiv {
+  padding-top: 50px;
+}
+
+.MetaFDiv {
+  display: flex;
+  align-items: center;
+}
+
+.MetaFDiv p{
+  font-size: 17px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.thankDiv {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.thankDiv p{
+  font-size: 16px;
+  font-weight: 500;
+  /* color: #ebebeb; */
+}
+
+.thankDiv h4 {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  /* color:white; */
+}
+
+@media (max-width:929px) {
+  .invoice-container {
+    padding: 14px;
+  }
+  .invoice-table thead th {
+    font-size: 13px;
+    padding: 4px 0px;
+  }
+  .firstRow td, .thirdRow td {
+    font-size: 12px;
+    padding: 2px 0px;
+  }
+  .InfoDiv {
+    /* gap: 0px; */
+    justify-content: space-between;
+  }
+  .InstDiv {
+    gap: 0px;
+    justify-content: space-between;
+  }
+  .tableHeadDiv p {
+    font-size: 13px;
+  }
+  .tableDataDiv p {
+    font-size: 12px;
+  }
+  .secondRow td {
+    font-size: 13px;
+    padding: 4px 0px;
+  }
+  .secondtableDataDiv p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width:750px) {
+  .invoice-container {
+    padding: 12px;
+  }
+  .logoImg {
+    width: 16%;
+    height: 50px;
+}
+.invoiceHeader {
+  padding: 25px 0px 25px 0px;
+  
+  font-size: 25px;
+}
+.headingDiv {
+  margin-bottom: 12px;
+}
+.invoiceDiv p {
+  font-size: 11px;
+}
+.branchDiv p { 
+  font-size: 11px;
+}
+.userDiv p {
+  font-size: 11px;
+}
+.InfoDiv {
+  margin-bottom: 23px;
+  justify-content: space-between;
+  /* gap: 0px; */
+}
+.InstDiv {
+  margin-bottom: 23px;
+  justify-content: space-between;
+  gap: 0px;
+}
+.userDiv h5 {
+  font-size: 18px;
+}
+
+.userDataDiv h5,.DuplicateDataDiv h5 {
+  font-size: 13px;
+}
+
+.ReceiptDataDiv {
+  margin: 23px 0px;
+}
+
+.userDataDiv p, .DuplicateDataDiv p {
+  font-size: 11px;
+  
+}
+
+.SignedDiv p {
+  font-size: 11px;
+}
+
+.investmentHead {
+  margin-bottom: 23px;
+  font-size: 21px;
+}
+
+.invoice-table thead th {
+  padding: 8px 7px;
+  font-size: 10px;
+}
+
+.firstRow td, .thirdRow td {
+  font-size: 8px;
+  padding: 0px 3px;
+}
+
+.secondRow td {
+  padding: 8px 7px;
+  font-size: 10px;
+}
+
+.secondtableDataDiv p {
+  font-size: 10px;
+}
+
+.tableDataDiv p {
+  font-size: 8px;
+}
+
+.totalRow {
+  font-size: 11px }
+
+.SignatureDiv {
+  padding-top: 42px;
+}
+
+.invoiceFooter {
+  margin: 23px;
+}
+
+.invoiceFooter p {
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+
+.invoiceFooter h3 {
+  font-size: 28px;
+}
+.thankDiv p {
+  font-size: 11px;
+}
+.thankDiv h4 {
+  font-size: 16px;
+}
+.tableHeadDiv p {
+  font-size: 10px;
+}
+/* .DuplicateDate {
+  padding-top: 25px;
+} */
+}
+
+@media (max-width:550px) {
+  .invoice {
+    padding: 7px;
+}
+  .invoice-container {
+    padding: 7px;
+  }
+  .logoImg {
+    width: 14%;
+    height: 40px;
+}
+.headingDiv {
+  margin-bottom: 10px;
+}
+  .invoiceHeader {
+    padding: 22px 0px 22px 0px;
+    font-size: 22px;
+}
+.branchDiv p {
+  font-size: 8px;
+  margin-bottom: 2px;
+}
+.invoiceDiv p {
+  font-size: 8px;
+  margin-bottom: 2px;
+}
+.userDiv p {
+  font-size: 8px;
+  margin-bottom: 2px;
+}
+.InfoDiv {
+  margin-bottom: 18px;
+  justify-content: space-between;
+  /* gap: 0px; */
+}
+.InstDiv {
+  margin-bottom: 18px;
+  justify-content: space-between;
+  gap: 0px;
+}
+.userDiv h5 {
+  font-size: 16px;
+}
+.tableHeadDiv p {
+  font-size: 8px;
+  margin-bottom: 2px;
+}
+.tableDataDiv p {
+  font-size: 6px;
+  margin-bottom: 2px;
+}
+/* .DuplicateDate {
+  padding-top: 12px;
+} */
+.investmentHead {
+  margin-bottom: 18px;
+  font-size: 16px;
+}
+.invoice-table thead th {
+  padding: 2px 1px;
+  font-size: 8px;
+}
+.firstRow td, .thirdRow td {
+  font-size: 6px;
+  padding: 0px 4px;
+}
+.secondRow td {
+  padding: 2px 1px;
+  font-size: 7px;
+}
+.secondtableDataDiv p {
+  font-size: 8px;
+  margin-bottom: 2px;
+}
+.userDataDiv p, .DuplicateDataDiv p {
+  font-size: 8px;
+  margin-bottom: 2px;
+}
+.userDataDiv h5,.DuplicateDataDiv h5 {
+  font-size: 9px;
+  margin-bottom: 0px;
+}
+.SignedDiv p {
+  font-size: 8px;
+  margin-bottom: 2px;
+}
+.invoiceFooter {
+  margin: 23px;
+}
+.invoiceFooter p {
+  font-size: 8px;
+  margin-bottom: 4px;
+}
+.invoiceFooter h3 {
+  font-size: 22px;
+}
+.invoiceFooter {
+  margin: 12px;
+}
+.SignatureDiv {
+  padding-top: 28px;
+}
+.thankDiv p {
+  font-size: 8px;
+  margin-bottom: 6px;
+}
+.thankDiv h4 {
+  font-size: 12px;
+}
+.ReceiptDataDiv {
+  margin: 18px 0px;
+}
+}
+
+@media (max-width:436px) {
+  .invoice {
+    padding: 5px;
+}
+  .invoice-container {
+    padding: 5px;
+  }
+  .logoImg {
+    width: 13%;
+    height: 30px;
+}
+.invoiceHeader {
+  padding: 16px 0px 16px 0px;
+  font-size: 19px;
+}
+.headingDiv {
+  margin-bottom: 8px;
+}
+.InstDiv {
+  margin-bottom: 10px;
+}
+.branchDiv p {
+  font-size: 6px;
+  margin-bottom: 1px;
+}
+.branchDiv p {
+  font-size: 6px;
+  margin-bottom: 1px;
+}
+.InfoDiv {
+  margin-bottom: 10px;
+}
+.userDiv h5 {
+  font-size: 13px;
+}
+.userDiv p {
+  font-size: 6px;
+  margin-bottom: 1px;
+}
+.investmentHead {
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+.invoiceDiv p {
+  font-size: 6px;
+  margin-bottom: 2px;
+}
+.invoice-table thead th {
+  padding: 1px 1px;
+  font-size: 6px;
+  border: 0.5px solid #878787;
+}
+.firstRow td, .thirdRow td {
+  font-size: 4px;
+  padding: 0px 4px;
+  border: 0.5px solid #ccc;
+}
+.tableHeadDiv p {
+  font-size: 6px;
+  margin-bottom: 0px;
+}
+.tableDataDiv p {
+  font-size: 4px;
+  margin-bottom: 0px;
+}
+.secondRow td {
+  padding: 1px 1px;
+  font-size: 6px;
+  border: 0.5px solid #ccc;
+}
+.secondtableDataDiv p {
+  font-size: 6px;
+  margin-bottom: 0px;
+}
+.userDataDiv p, .DuplicateDataDiv p {
+  font-size: 6px;
+  margin-bottom: 1px;
+}
+.userDataDiv h5,.DuplicateDataDiv h5 {
+  font-size: 7px;
+  margin-bottom: 0px;
+}
+.ReceiptDataDiv {
+  margin: 10px 0px;
+}
+/* .DuplicateDate {
+  padding-top: 9px;
+} */
+.SignedDiv p {
+  font-size: 6px;
+  margin-bottom: 1px;
+}
+.invoiceFooter {
+  margin: 13px;
+}
+.SignatureDiv {
+  padding-top: 24px;
+}
+.invoiceFooter p {
+  font-size: 6px;
+  margin-bottom: 5px;
+}
+.invoiceFooter h3 {
+  font-size: 19px;
+}
+.thankDiv p {
+  font-size: 6px;
+  margin-bottom: 4px;
+}
+.thankDiv h4 {
+  font-size: 9px;
+}
+}
+
+@media (max-width:364px) {
+  .invoice {
+    padding: 3px;
+}
+.invoice-container {
+  padding: 3px;
+}
+.logoImg {
+  width: 13%;
+  height: 30px;
+}
+.headingDiv {
+  margin-bottom: 6px;
+}
+.invoiceDiv p {
+  font-size: 5px;
+  margin-bottom: 0px;
+}
+.branchDiv p {
+  font-size: 5px;
+  margin-bottom: 0px;
+}
+.InfoDiv {
+  margin-bottom: 8px;
+}
+.InstDiv {
+  margin-bottom: 8px;
+}
+.userDiv p {
+  font-size: 5px;
+  margin-bottom: 0px;
+}
+.userDiv h5 {
+  font-size: 11px;
+}
+.userDataDiv p, .DuplicateDataDiv p {
+  font-size: 5px;
+  margin-bottom: 0px;
+}
+.userDataDiv h5,.DuplicateDataDiv h5 {
+  font-size: 6px;
+  margin-bottom: 0px;
+}
+/* .DuplicateDate {
+  padding-top: 8px;
+} */
+.SignedDiv p {
+  font-size: 5px;
+  margin-bottom: 0px;
+}
+.investmentHead {
+  margin-bottom: 8px;
+  font-size: 8px;
+}
+.secondRow td {
+  padding: 1px 1px;
+  font-size: 5px;
+}
+.secondtableDataDiv p {
+  font-size: 5px;
+  margin-bottom: 0px;
+}
+.ReceiptDataDiv {
+  margin: 8px 0px;
+}
+.tableHeadDiv p {
+  font-size: 5px;
+  margin-bottom: 0px;
+}
+.invoice-table thead th {
+  padding: 0px 1px;
+  font-size: 5px;
+}
+.firstRow td, .thirdRow td {
+  font-size: 4px;
+  padding:0px 2px;
+}
+.invoiceFooter {
+  margin: 8px;
+}
+.SignatureDiv {
+  padding-top: 18px;
+}
+.invoiceFooter p {
+  font-size: 5px;
+  margin-bottom: 3px;
+}
+.thankDiv p {
+  font-size: 5px;
+  margin-bottom: 3px;
+}
+.thankDiv h4 {
+  font-size: 7px;
+}
+}
+
+  
