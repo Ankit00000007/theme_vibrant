@@ -4,8 +4,8 @@ export const config = {
     code: "INR",
   },
   api: {
-    // baseUrl: "https://apis.vibrant-science.com/user",
-    baseUrl: "https://testingapis.vibrant-science.com/user",
+    baseUrl: "https://apis.vibrant-science.com/user",
+    // baseUrl: "https://testingapis.vibrant-science.com/user",
     endpoints: {
       products: "/get-all-products",
       product: (id: string) => `/get-product/${id}`,

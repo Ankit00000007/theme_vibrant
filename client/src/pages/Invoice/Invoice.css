@@ -8,8 +8,7 @@
   background: none;
   border: none;
   font-size: 28px;
-  color: white;
-  background: var(--containerColor);
+  background: #98fbb86b;
   box-shadow: var(--myboxShadow);
   padding: 0px 5px;
   border-radius: 5px;
@@ -21,14 +20,15 @@
 }
 
 .invoice-container {
-    border: 2px solid var(--colorPrimary);
+    border: 2px solid #6ee7b7;
     padding: 10px;
-    /* background-color:var(--containerColor); */
+    /* background-color:#98fbb86b; */
   }
   
   .invoice-table {
     margin: 0px;
     box-shadow: none;
+    width: 100%;
   }
 
   .invoice-table thead th {
@@ -36,7 +36,7 @@
     font-size: 13px;
     /* color: #3c1a2d; */
     border: 1px solid #ccc;
-    background-color: var(--containerColor);
+    background-color: #98fbb86b;
     line-height: 18px;
     text-align: center;
     padding: 5px 2px;
@@ -134,12 +134,13 @@
   .branchDiv span {
     font-weight: 700;
     color: white;
-    color: var(--colorPrimary);
+    color: #059669;
   }
 
   .investmentHead {
     margin-bottom:26px;
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 25px;
   }
 
   .investmentUser {
@@ -149,6 +150,7 @@
 
   .InfoDiv {
     /* gap: 330px; */
+    display: flex;
     justify-content: space-between;
     margin-bottom: 28px;
   }
@@ -168,7 +170,7 @@
 
   .invoiceDiv span {
     font-weight: 700;
-    color:var(--colorPrimary);
+    color:#059669;
   }
 
   .invoiceHeader {
@@ -193,7 +195,7 @@
 
   .userDiv span {
     font-weight: 500;
-    color: var(--colorPrimary);
+    color: #059669;
   }
 
   .ReceiptDataDiv {
@@ -595,7 +597,7 @@
 }
 .investmentHead {
   margin-bottom: 10px;
-  font-size: 12px;
+  font-size: 10px;
 }
 .invoiceDiv p {
   font-size: 6px;
@@ -603,7 +605,7 @@
 }
 .invoice-table thead th {
   padding: 1px 1px;
-  font-size: 6px;
+  font-size: 5px;
   border: 0.5px solid #878787;
 }
 .firstRow td, .thirdRow td {
@@ -612,7 +614,7 @@
   border: 0.5px solid #ccc;
 }
 .tableHeadDiv p {
-  font-size: 6px;
+  font-size: 5px;
   margin-bottom: 0px;
 }
 .tableDataDiv p {
@@ -621,7 +623,7 @@
 }
 .secondRow td {
   padding: 1px 1px;
-  font-size: 6px;
+  font-size: 5px;
   border: 0.5px solid #ccc;
 }
 .secondtableDataDiv p {

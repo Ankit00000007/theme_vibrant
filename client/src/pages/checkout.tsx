@@ -85,12 +85,16 @@ export default function CheckoutPage() {
 
     try {
       setIsSubmitting(true);
-      await placeOrder(token, orderData);
+      const response = await placeOrder(token, orderData);
+      console.log("API Response:", response);
       toast({
         title: "Success",
         description: "Order placed successfully!"
       });
-      setLocation("/");
+      const orderId = response?.
+      newOrder?.order_Id;
+      // setLocation(`/invoice?orderId=${orderId}`);
+      window.location.href = `/invoice?orderId=${orderId}`;
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Failed to place order';
       if (message.includes('Session expired')) {

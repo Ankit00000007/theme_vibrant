@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/store/auth-store";
 import { Link, useLocation } from "wouter";
-import { LogOut, User, LayoutDashboard, ShoppingCart, Menu, X } from "lucide-react";
+import { Package, LogOut, User, LayoutDashboard, ShoppingCart, Menu, X } from "lucide-react";
 import { LoginDialog } from "./login-dialog";
 import { useCart } from "@/store/cart-store";
 import "./header.css";
@@ -16,8 +16,8 @@ export function Header() {
 
   const handleDashboardClick = () => {
     if (token) {
-      // window.location.href = `https://d.vibrant-science.com/?token=${token}`;
-      window.location.href = `https://test.vibrant-science.com/?token=${token}`;
+      window.location.href = `https://d.vibrant-science.com/?token=${token}`;
+      // window.location.href = `https://test.vibrant-science.com/?token=${token}`;
     }
   };
 
@@ -74,6 +74,15 @@ export function Header() {
 
             {user ? (
               <>
+              {/* <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setLocation("/orders")}
+                  className="bg-[#98fb98]/20 border-emerald-300 text-gray-800 hover:bg-[#98fb98]/30"
+                >
+                  <Package className="h-4 w-4 sm:mr-2" />
+                  <span className="hidden sm:inline">Orders</span>
+                </Button> */}
                 <div className="flex items-center gap-2 text-gray-800">
                   <User className="h-4 w-4" />
                   <span className="text-sm font-medium hidden sm:block">
