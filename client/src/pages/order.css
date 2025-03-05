@@ -1,0 +1,95 @@
+
+.converter-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.data-table thead {
+    background-color:rgb(5 150 105 / var(--tw-bg-opacity, 1));
+}
+
+.data-table th, .data-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #d0e6d0;
+}
+
+.data-table th {
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.data-table tr:nth-child(even) {
+    background-color: #f0f9f0;
+}
+
+
+
+
+
+
+.glow-on-hover {
+    background-color: rgb(5 150 105 / var(--tw-bg-opacity, 1));
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    /* .data-table {
+        font-size: 12px;
+    } */
+
+    .data-table th, .data-table td {
+        padding: 8px 10px;
+    }
+
+    .currency-head h2 {
+        font-size: 20px;
+    }
+    .glow-on-hover {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .profile-body {
+        padding: 10px;
+    }
+
+    /* .data-table {
+        font-size: 10px;
+    } */
+
+    .data-table th, .data-table td {
+        padding: 6px 8px;
+    }
+    .glow-on-hover {
+        padding: 4px 8px;
+        font-size: 10px;
+        border-radius: 3px;
+    }
+}

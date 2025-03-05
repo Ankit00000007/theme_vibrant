@@ -30,7 +30,7 @@ export function Header() {
       <header className="sticky top-0 z-50 bg-gradient-to-r from-[#7fffd4] to-[#98fb98] border-b border-emerald-200">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-4">
-            <div className="w-32 h-16 relative bg-white/90 rounded-lg p-2 shadow-sm">
+            <div className="w-30 h-16 relative bg-white/90 rounded-lg p-2 shadow-sm">
               <img
                 src="/vibrantlogo.png"
                 alt="Vibrant Health Science Logo"
@@ -56,7 +56,7 @@ export function Header() {
             </ul>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2" style={{margin:"0 4px"}}>
             <Button
               variant="outline"
               size="sm"
@@ -74,7 +74,7 @@ export function Header() {
 
             {user ? (
               <>
-              {/* <Button
+              <Button
                   variant="outline"
                   size="sm"
                   onClick={() => setLocation("/orders")}
@@ -82,7 +82,7 @@ export function Header() {
                 >
                   <Package className="h-4 w-4 sm:mr-2" />
                   <span className="hidden sm:inline">Orders</span>
-                </Button> */}
+                </Button>
                 <div className="flex items-center gap-2 text-gray-800">
                   <User className="h-4 w-4" />
                   <span className="text-sm font-medium hidden sm:block">

@@ -16,7 +16,8 @@ import { useEffect } from "react";
 import { useAuth } from "@/store/auth-store";
 import { useCart } from "@/store/cart-store";
 import Science from "@/pages/science";
-import Invoice from "@/pages/Invoice/Invoice"
+import Invoice from "@/pages/Invoice/Invoice";
+import Orders from "@/pages/orders";
 
 function Router() {
   const { user } = useAuth();
@@ -41,6 +42,7 @@ function Router() {
           <Route path="/checkout" component={CheckoutPage} />
           <Route path="/cart" component={CartPage} />
           <Route path="/invoice" component={Invoice} />
+          <Route path="/orders" component={Orders} />
           <Route path="/document-viewer" component={DocumentViewer} />
           <Route component={NotFound} />
         </Switch>
