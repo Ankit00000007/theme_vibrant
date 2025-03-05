@@ -3,6 +3,7 @@ import moment from "moment";
 import axios from "axios";
 import { config } from "@/config";
 import "./order.css";
+import PaginationComponent from "@/components/pagination";
 
 // Constants
 const API_BASE_URL = config.api.baseUrl;
@@ -63,17 +64,25 @@ const Orders: React.FC = () => {
   const [expandedRows, setExpandedRows] = useState<number[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  
+  // Pagination States
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [totalPages, setTotalPages] = useState<number>(1);
 
   // Fetch Orders Function
-  async function fetchOrders() {
+  async function fetchOrders(page: number = 1) {
     try {
       setIsLoading(true);
-      const res = await axiosInstance.get<OrderResponse>("/get_orders");
+      const res = await axiosInstance.get<OrderResponse>("/get_orders", {
+        params: { page }
+      });
       
       // Ensure orders is always an array and parse cart items
       const processedOrders = (res.data?.data || []).map(processOrderCartItems);
       
       setOrders(processedOrders);
+      setCurrentPage(res.data.currentPage);
+      setTotalPages(res.data.totalPages);
       setError(null);
     } catch (error) {
       console.error("Error fetching orders:", error);
@@ -113,7 +122,7 @@ const Orders: React.FC = () => {
   // Initial Data Fetch
   useEffect(() => {
     fetchCompanyInfo();
-    fetchOrders();
+    fetchOrders(currentPage);
   }, []);
 
   // Toggle Row Expansion
@@ -130,6 +139,11 @@ const Orders: React.FC = () => {
     }
   };
 
+  // Page Change Handler
+  const handlePageChange = (page: number) => {
+    fetchOrders(page);
+  };
+
   // Render Loading State
   if (isLoading) {
     return (
@@ -144,7 +158,7 @@ const Orders: React.FC = () => {
     return (
       <div className="error-container">
         <p>{error}</p>
-        <button onClick={fetchOrders}>Retry</button>
+        <button onClick={() => fetchOrders(currentPage)}>Retry</button>
       </div>
     );
   }
@@ -160,139 +174,145 @@ const Orders: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#7fffd4] to-[#98fb98] py-6 sm:py-12">
-    <div className="container mx-auto px-4">
-      <div className="flex justify-between items-center mb-8">
-        <h2 className="text-3xl font-bold text-gray-800">Orders</h2>
-      </div>
-      <div className="converter-container">
-        <div className="table-container">
-          <table className="data-table">
-            <thead>
-              <tr>
-                <th>Sr No</th>
-                <th>Package Type</th>
-                <th>Amount</th>
-                <th>Type</th>
-                <th>Date</th>
-                <th>Cart Items</th>
-                <th>Invoice</th>
-              </tr>
-            </thead>
-            <tbody>
-              {orders.map((order, index) => (
-                <React.Fragment key={order.order_Id}>
-                  {/* Main Order Row */}
-                  <tr
-                    style={{
-                      borderBottom: "1px solid #c5c5c5",
-                      cursor: "pointer",
-                    }}
-                  >
-                    <td>{index + 1}</td>
-                    <td>{order?.package_type}</td>
-                    <td>{parseFloat(order?.amount.toString()).toFixed(2)}</td>
-                    <td>{order?.type}</td>
-                    <td>{moment(order?.createdAt).format("DD MMM YYYY")}</td>
-                    <td>
-                      {order?.cartItems && order.cartItems.length > 0 && (
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center mb-8">
+          <h2 className="text-3xl font-bold text-gray-800">Orders</h2>
+        </div>
+        <div className="converter-container">
+          <div className="table-container">
+            <table className="data-table">
+              <thead>
+                <tr>
+                  <th>Sr No</th>
+                  <th>Package Type</th>
+                  <th>Amount</th>
+                  <th>Type</th>
+                  <th>Date</th>
+                  <th>Cart Items</th>
+                  <th>Invoice</th>
+                </tr>
+              </thead>
+              <tbody>
+                {orders.map((order, index) => (
+                  <React.Fragment key={order.order_Id}>
+                    {/* Main Order Row */}
+                    <tr
+                      style={{
+                        borderBottom: "1px solid #c5c5c5",
+                        cursor: "pointer",
+                      }}
+                    >
+                      <td>{(currentPage - 1) * 10 + index + 1}</td>
+                      <td>{order?.package_type}</td>
+                      <td>{parseFloat(order?.amount.toString()).toFixed(2)}</td>
+                      <td>{order?.type}</td>
+                      <td>{moment(order?.createdAt).format("DD MMM YYYY")}</td>
+                      <td>
+                        {order?.cartItems && order.cartItems.length > 0 && (
+                          <button
+                            onClick={() => toggleRow(index)}
+                            style={{
+                              background: "none",
+                              border: "none",
+                              color: "black",
+                              cursor: "pointer",
+                            }}
+                          >
+                            {expandedRows.includes(index) ? "Hide" : "Show"}{" "}
+                            Cart Items
+                          </button>
+                        )}
+                      </td>
+                      <td>
                         <button
-                          onClick={() => toggleRow(index)}
-                          style={{
-                            background: "none",
-                            border: "none",
-                            color: "black",
-                            cursor: "pointer",
-                          }}
+                          className="glow-on-hover my-glow"
+                          onClick={() => handleNavigateToInvoice(order?.order_Id)}
                         >
-                          {expandedRows.includes(index) ? "Hide" : "Show"}{" "}
-                          Cart Items
+                          View
                         </button>
-                      )}
-                    </td>
-                    <td>
-                      <button
-                        className="glow-on-hover my-glow"
-                        onClick={() => handleNavigateToInvoice(order?.order_Id)}
-                      >
-                        View
-                      </button>
-                    </td>
-                  </tr>
-
-                  {/* Expandable Cart Items Row */}
-                  {expandedRows.includes(index) && order?.cartItems && (
-                    <tr>
-                      <td colSpan={7}>
-                        <table
-                          style={{
-                            width: "100%",
-                            background: "transparent",
-                            border: "none",
-                            marginTop: "10px",
-                          }}
-                        >
-                          <thead>
-                            <tr>
-                              {[
-                                "Item Name",
-                                "Quantity",
-                                "Price",
-                                "Total",
-                                "Order BV",
-                                "Images",
-                              ].map((header) => (
-                                <th
-                                  key={header}
-                                  style={{ backgroundColor: " rgb(1 209 144 / 66%)" }}
-                                >
-                                  {header}
-                                </th>
-                              ))}
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {order.cartItems.map((item, itemIndex) => (
-                              <tr key={itemIndex}>
-                                <td>{item.name}</td>
-                                <td>{item.quantity}</td>
-                                <td>
-                                  {parseFloat(item.price.toString()).toFixed(2)}
-                                </td>
-                                <td>
-                                  {parseFloat(item.grand_total.toString()).toFixed(2)}
-                                </td>
-                                <td>{item.order_bv}</td>
-                                <td>
-                                  {item.images && item.images.length > 0 && (
-                                    <img
-                                      src={item.images[0]}
-                                      alt={item.name}
-                                      style={{
-                                        width: "50px",
-                                        height: "50px",
-                                        marginRight: "5px",
-                                        objectFit: "cover",
-                                      }}
-                                    />
-                                  )}
-                                </td>
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
                       </td>
                     </tr>
-                  )}
-                </React.Fragment>
-              ))}
-            </tbody>
-          </table>
+
+                    {/* Expandable Cart Items Row */}
+                    {expandedRows.includes(index) && order?.cartItems && (
+                      <tr>
+                        <td colSpan={7}>
+                          <table
+                            style={{
+                              width: "100%",
+                              background: "transparent",
+                              border: "none",
+                              marginTop: "10px",
+                            }}
+                          >
+                            <thead>
+                              <tr>
+                                {[
+                                  "Item Name",
+                                  "Quantity",
+                                  "Price",
+                                  "Total",
+                                  "Order BV",
+                                  "Images",
+                                ].map((header) => (
+                                  <th
+                                    key={header}
+                                    style={{ backgroundColor: " rgb(1 209 144 / 66%)" }}
+                                  >
+                                    {header}
+                                  </th>
+                                ))}
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {order.cartItems.map((item, itemIndex) => (
+                                <tr key={itemIndex}>
+                                  <td>{item.name}</td>
+                                  <td>{item.quantity}</td>
+                                  <td>
+                                    {parseFloat(item.price.toString()).toFixed(2)}
+                                  </td>
+                                  <td>
+                                    {parseFloat(item.grand_total.toString()).toFixed(2)}
+                                  </td>
+                                  <td>{item.order_bv}</td>
+                                  <td>
+                                    {item.images && item.images.length > 0 && (
+                                      <img
+                                        src={item.images[0]}
+                                        alt={item.name}
+                                        style={{
+                                          width: "50px",
+                                          height: "50px",
+                                          marginRight: "5px",
+                                          objectFit: "cover",
+                                        }}
+                                      />
+                                    )}
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    )}
+                  </React.Fragment>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
+
+        {/* Add Pagination Component */}
+        <PaginationComponent 
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
       </div>
-    </div>
     </div>
   );
 };
 
 export default Orders;
-
